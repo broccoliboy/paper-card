@@ -28,12 +28,12 @@
 
 <h1>paper-card</h1>
 
-<h3>Default layout (block)</h3>
+<h3>Block layout, collapsible</h3>
 <paper-card header="Header" collapsible>
   <div class="content">Content</div>
 </paper-card>
 
-<h3>Inline-block layout</h3>
+<h3>Inline-block layout, collapsible</h3>
 <paper-card inline header="Header 1" collapsible>
   <div class="content">Content</div>
 </paper-card>
@@ -44,7 +44,7 @@
   <div class="content">Content<br>Content<br>Content</div>
 </paper-card>
 
-<h3>Flex layout</h3>
+<h3>Flex layout, collapsible</h3>
 <div layout horizontal start>
   <paper-card flex header="Header 1" collapsible>
     <div class="content">Content</div>
@@ -61,32 +61,37 @@
   </paper-card>
 </div>
 
-<h3>Image cards, flex layout (fixed height)</h3>
-<div horizontal layout style="height: 300px;">
-  <paper-card flex header="Image (cover)" image src="img1.jpg" sizing="cover"></paper-card>
-  <paper-card flex header="Image (contain)" image src="img2.jpg" sizing="contain"></paper-card>
-</div>
-
-<h3>Image cards, inline layout (fixed size)</h3>
-<paper-card inline header="Image (cover)" image src="img1.jpg" sizing="cover" style="height:300px; width:300px;"></paper-card>
-<paper-card inline header="Image (cover)" image src="img2.jpg" sizing="cover" style="height:200px; width:200px;"></paper-card>
-
-<h3>No header, flex layout</h3>
-<div horizontal layout style="height:300px;">
-  <paper-card flex>
-    <div class="content">Content</div>
+<h3>Image cards, flex layout (fixed image height), collapsible</h3>
+<div horizontal layout start>
+  <paper-card flex header="Image 1 (collapsible)" collapsible>
+    <core-image src="img1.jpg" sizing="cover" height="300px"></core-image>
   </paper-card>
-  <paper-card flex image src="img3.jpg" sizing="cover"></paper-card>
-  <paper-card flex image src="img3.jpg" sizing="contain"></paper-card>
+  <paper-card flex header="Image 2 (collapsible)" collapsible>
+    <core-image src="img2.jpg" sizing="cover" height="300"></core-image>
+  </paper-card>
+  <paper-card flex header="Image 3 (collapsible)" collapsible>
+    <core-image src="img3.jpg" sizing="cover" height="300"></core-image>
+  </paper-card>
 </div>
 
-<h3>No header, inline layout</h3>
-<paper-card inline style="width: 300px; height: 300px;" image src="img1.jpg" sizing="cover"></paper-card>
-<paper-card inline style="width:300px; height:300px;">
-  <div class="content">Content</div>
-</paper-card>
-<paper-card inline style="width: 300px; height: 300px;" image src="img2.jpg" sizing="cover"></paper-card>
-
+<h3>Image cards, flex layout (fixed container height)</h3>
+<div horizontal layout style="height:300px;">
+  <paper-card flex header="Image 1" imageFlex>
+    <core-image src="img1.jpg" sizing="cover" flex></core-image>
+  </paper-card>
+  <paper-card flex header="Header 1">
+    <div class="content">Content 1</div>
+  </paper-card>
+  <paper-card flex header="Image 2" imageFlex>
+    <core-image src="img2.jpg" sizing="cover" flex></core-image>
+  </paper-card>
+  <paper-card flex header="Header 2">
+    <div class="content">Content 2</div>
+  </paper-card>
+  <paper-card flex header="Image 3" imageFlex>
+    <core-image src="img3.jpg" sizing="cover" flex></core-image>
+  </paper-card>
+</div>
 
 </body>
 </html>

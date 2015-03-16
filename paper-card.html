@@ -6,7 +6,9 @@ paper-shadow so it appears to float above the page.
 
 ##### Example
 
-    <paper-card header="Hello, my name is..."></paper-card>
+    <paper-card header="Hello, my name is...">
+      <div>Steve</div>
+    </paper-card>
 
 @element paper-card
 @blurb Simple element for displaying blocks of information that includes a header and some content.
@@ -17,7 +19,7 @@ paper-shadow so it appears to float above the page.
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 <link rel="import" href="../core-image/core-image.html">
 
-<polymer-element name="paper-card" attributes="header z collapsible opened image src sizing position" horizontal layout>
+<polymer-element name="paper-card" attributes="header z collapsible opened imageFlex" horizontal layout>
   <template>
 
     <link rel="stylesheet" href="paper-card.css">
@@ -29,13 +31,8 @@ paper-shadow so it appears to float above the page.
         <content select=".header"></content>
       </div>
 
-      <core-collapse id="collapse" opened="{{opened}}" flex?="{{src}}">
-        <template if="{{src}}">
-          <core-image src="{{src}}" sizing="{{sizing}}" position="{{position}}" fit></core-image>
-        </template>
-        <template if="{{!src}}">
-          <content></content>
-        </template>
+      <core-collapse id="collapse" opened="{{opened}}" vertical layout flex?="{{imageFlex != null}}">
+        <content></content>
       </core-collapse>
 
     </paper-shadow>
