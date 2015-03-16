@@ -5,4 +5,4 @@ paper-shadow so it appears to float above the page.
 
 ## Installation
 
-`bower install --save broccoliboy/paper-card
+`bower install --save broccoliboy/paper-card`
