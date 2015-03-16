@@ -1,0 +1,73 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Simple polymer element for displaying blocks of information that includes a header and some content. The card contains a
+paper-shadow so it appears to float above the page.
+
+##### Example
+
+    <paper-card header="Hello, my name is..."></paper-card>
+
+@element paper-card
+@blurb Simple element for displaying blocks of information that includes a header and some content.
+@homepage https://github.com/broccoliboy/paper-card
+-->
+
+<link rel="import" href="../core-collapse/core-collapse.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../core-image/core-image.html">
+
+<polymer-element name="paper-card" attributes="header z collapsible opened image src sizing position" horizontal layout>
+  <template>
+
+    <link rel="stylesheet" href="paper-card.css">
+
+    <paper-shadow z="{{z}}" vertical layout flex>
+
+      <div id="header" hidden?="{{!header}}" horizontal layout on-click="{{toggleCollapse}}">
+        <div flex>{{header}}</div>
+        <content select=".header"></content>
+      </div>
+
+      <core-collapse id="collapse" opened="{{opened}}" flex?="{{src}}">
+        <template if="{{src}}">
+          <core-image src="{{src}}" sizing="{{sizing}}" position="{{position}}" fit></core-image>
+        </template>
+        <template if="{{!src}}">
+          <content></content>
+        </template>
+      </core-collapse>
+
+    </paper-shadow>
+
+  </template>
+  <script>
+    (function () {
+
+      Polymer({
+
+        // z
+        // Height of shadow
+        // Default: 1
+        z: 1,
+
+        // collapsible
+        // If true, clicking on the header will collapse/expand the card
+        // Default: false
+        collapsible: false,
+
+        // opened
+        // Collapse state of the card
+        // Default: true
+        opened: true,
+
+        // toggleCollapse
+        // Function to toggle between collapsed and expanded
+        toggleCollapse: function () {
+          if (this.collapsible) this.$.collapse.toggle();
+        }
+      });
+
+    })();
+  </script>
+</polymer-element>
