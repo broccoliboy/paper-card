@@ -31,7 +31,11 @@ paper-shadow so it appears to float above the page.
         <content select=".header"></content>
       </div>
 
-      <core-collapse id="collapse" opened="{{opened}}" vertical layout flex?="{{imageFlex != null}}">
+      <core-collapse opened="{{opened}}" vertical layout flex?="{{imageFlex != null}}">
+        <content select="core-image"></content>
+      </core-collapse>
+
+      <core-collapse opened="{{opened}}">
         <content></content>
       </core-collapse>
 
@@ -61,8 +65,13 @@ paper-shadow so it appears to float above the page.
         // toggleCollapse
         // Function to toggle between collapsed and expanded
         toggleCollapse: function () {
-          if (this.collapsible) this.$.collapse.toggle();
+          if (this.collapsible) this.opened = !this.opened;
+        },
+
+        ready: function () {
+
         }
+
       });
 
     })();
