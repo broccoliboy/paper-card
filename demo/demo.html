@@ -20,6 +20,9 @@
     .content {
       padding: 1.5em;
     }
+    .margin /deep/ core-image {
+      margin: 1em;
+    }
   </style>
 
 </head>
@@ -64,12 +67,12 @@
 <h3>Image cards, flex layout (fixed image height), collapsible</h3>
 <div horizontal layout start>
   <paper-card flex header="Image 1 (collapsible)" collapsible>
-    <core-image src="img1.jpg" sizing="cover" height="300px"></core-image>
+    <core-image src="img1.jpg" sizing="cover" height="200px"></core-image>
   </paper-card>
   <paper-card flex header="Image 2 (collapsible)" collapsible opened="false">
-    <core-image src="img2.jpg" sizing="cover" height="300"></core-image>
+    <core-image src="img2.jpg" sizing="cover" height="250"></core-image>
   </paper-card>
-  <paper-card flex header="Image 3 (collapsible)" collapsible>
+  <paper-card class="margin" flex header="Image 3 (collapsible)" collapsible>
     <core-image src="img3.jpg" sizing="cover" height="300"></core-image>
   </paper-card>
 </div>
